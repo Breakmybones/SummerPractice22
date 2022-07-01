@@ -1,5 +1,6 @@
 package com.example.summerprac22
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -9,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,14 +21,13 @@ class MainActivity : AppCompatActivity() {
             val editTextWeight = findViewById<EditText>(R.id.et_weight)
             val editTextAge = findViewById<EditText>(R.id.et_age)
             val result = findViewById<TextView>(R.id.tv_result)
-            if (editTextName.error == null && editTextHeight.error == null && editTextWeight.error == null
-                && editTextAge.error == null) {
+            if (editTextName.length() != 0 && editTextHeight.length() != 0 && editTextWeight.length() != 0 && editTextAge.length() != 0) {
                 val name:String = editTextName.text.toString()
                 val height: Int = editTextHeight?.text.toString().toInt()
                 val weight: Double = editTextWeight?.text.toString().toDouble()
                 val age: Int = editTextAge?.text.toString().toInt()
 
-                if ( name == "" || name.length > 50 || height <= 0 || height >= 250 || weight <= 0.0
+                if (name.length > 50 || height <= 0 || height >= 250 || weight <= 0.0 //fun
                     || weight >= 250.0 || age <= 0 || age >= 150){
                     result.text = "Validation failed"
                 }else {
