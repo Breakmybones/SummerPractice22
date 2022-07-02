@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SummerPrac22</string>
+    <string name="start">Start</string>
+    <string name="messages" />
+    <string name="Music" />
+    <string name="Profile">Profile</string>
+    <string name="Settings">Settings</string>
 </resources>
