@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun calculate(name: String, height: Int, weight: Double, age: Int): String{
-        val result = (weight * 10 + height * 6.25 - age * 5 - 83)*1.2 //суточная норма каллорий, без физ. активности
+        val result = (weight * 10 + height * 6.25 - age * 5 - 83)*1.2 + name.length //суточная норма каллорий, без физ. активности
         return "$name : $result kkal"
 
     }
