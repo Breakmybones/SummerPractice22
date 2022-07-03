@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_list"
+    android:id="@+id/main_navigation">
+
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="com.voxeldev.summerpractice2022.ui.fragments.ListFragment"
+        android:label="@string/snacks"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_navigation_list_to_navigation_details"
+            app:enterAnim="@anim/left_in"
+            app:exitAnim="@anim/right_out"
+            app:popEnterAnim="@anim/left_in"
+            app:popExitAnim="@anim/right_out"
+            app:destination="@id/navigation_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.voxeldev.summerpractice2022.ui.fragments.DetailsFragment"
+        android:label="@string/details"
+        tools:layout="@layout/fragment_details" />
+</navigation>
